@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>FormTag</title>
+</head>
+<body>
+<!--form tage 안에 action은 매핑한 urlpatterns를 넣어준다-->
+<!--  from태그를 이용해 gop.java파일에 있는 doGet()를 직접 호출.
+ get => doGet()방식, post => doPost()방식-->
+  <form method="post" action="gop">
+<!--입력타입이 submit인버튼을 만들고, 버튼 라벨에 전송 글씨
+    버튼을 누르면 GetOrPost.java파일에 있는 doGet() 호출-->
+    <input type="submit" value="전송">
+  </form>
+
+</body>
+</html>

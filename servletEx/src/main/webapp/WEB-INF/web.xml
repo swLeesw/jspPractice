@@ -1,0 +1,19 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+<!-- 매핑해야될 서블릿 파일을 저장 -->
+  <servlet>
+    <servlet-name>sv</servlet-name>
+    <servlet-class>sv</servlet-class>
+  </servlet>
+<!-- 위에서 지정한 매핑할 서블릿 파일을 아래 url-pattern태크를
+ 이옹하여 url창에 표시되도록 한다. 위에서 서블릿네임으로 지정한 값과 동일하게 지정-->
+  <servlet-mapping>
+    <servlet-name>sv</servlet-name>
+    <url-pattern>/GO</url-pattern>
+  </servlet-mapping>
+
+</web-app>
