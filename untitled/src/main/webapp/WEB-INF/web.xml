@@ -1,0 +1,44 @@
+<!DOCTYPE web-app PUBLIC
+ "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+ "http://java.sun.com/dtd/web-app_2_3.dtd" >
+
+<web-app>
+  <display-name>Archetype Created Web Application</display-name>
+<!--  initParam은 특정 서블렛, contextParam은 모든 서블렛에 적용-->
+
+    <context-param>
+        <param-name>adminId</param-name>
+        <param-value>sw</param-value>
+    </context-param>
+    <context-param>
+        <param-name>adminPw</param-name>
+        <param-value>2560</param-value>
+    </context-param>
+
+
+  <servlet>
+<!--    서블렛 지정-->
+    <servlet-name>initParamEx</servlet-name>
+    <servlet-class>initParamEx</servlet-class>
+
+    <init-param>
+      <param-name>id</param-name>
+      <param-value>kildong</param-value>
+    </init-param>
+
+    <init-param>
+      <param-name>pw</param-name>
+      <param-value>1234</param-value>
+    </init-param>
+  </servlet>
+    
+    <listener>
+        <listener-class>ServletListener</listener-class>
+    </listener>
+
+  <servlet-mapping>
+    <servlet-name>initParamEx</servlet-name>
+    <url-pattern>/IPE</url-pattern>
+  </servlet-mapping>
+
+</web-app>
