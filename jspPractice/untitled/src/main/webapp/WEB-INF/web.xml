@@ -15,9 +15,6 @@
         <param-value>2560</param-value>
     </context-param>
 
-    <listener>
-        <listener-class>ServletListener</listener-class>
-    </listener>
 
   <servlet>
 <!--    서블렛 지정-->
@@ -34,11 +31,14 @@
       <param-value>1234</param-value>
     </init-param>
   </servlet>
+    
+    <listener>
+        <listener-class>ServletListener</listener-class>
+    </listener>
 
   <servlet-mapping>
     <servlet-name>initParamEx</servlet-name>
     <url-pattern>/IPE</url-pattern>
   </servlet-mapping>
-
 
 </web-app>

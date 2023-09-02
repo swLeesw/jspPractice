@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>tagTest</title>
+</head>
+<body>
+
+<section id="login">
+    <form action="/SL" method="post">
+        이름: <input type="text" name="name" size="10"><br/>
+        아이디: <input type="text" name="id" size="10"><br/>
+        비밀번호: <input type="password" name="pw" size="10"><br/><br/>
+
+        취미: <input type="checkbox" name="hobby" value="read">독서
+        <input type="checkbox" name="hobby" value="cook">요리
+        <input type="checkbox" name="hobby" value="run">조깅
+        <br/>
+
+        전공: <input type="radio" name="major" value="kor" checked="checked">국문
+        <input type="radio" name="major" value="eng">영어
+        <input type="radio" name="major" value="ger">독일
+        <br/>
+
+        <select name="protocol"> <!--리스트 형식으로 고르는-->
+            <option value="http" selected="selected">HTTP</option>
+            <option value="fts">FTT</option>
+            <option value="smtp">SMTP</option>
+        </select>
+        <br/><br/>
+        <input type="submit" value="login">
+        <!--히든 속성은 클라이언트에게 숨겨진 내용으로 서버에 전송하고자 할 때 사용(IP, 로그인 시간 등등)-->
+        <input type="hidden" value="히든">
+        <input type="reset" value="reset">
+    </form>
+</section>
+
+</body>
+</html>

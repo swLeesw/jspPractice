@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>로그인창</title>
+    <style>
+        /*id로 태그의 이름을 지정했다면 #를 쓰고 class로 태그의 이름을 지정했다면 .를 써줘야한다*/
+        #hi {
+            color: midnightblue;
+            background-color: aqua;
+            margin: 10px;
+            border: 10px;
+            padding: 10px;
+        }
+    </style>
+    <script type="text/javascript">
+        function func_validate() {
+            var log = document.log;
+            var id = log.id.value;
+            var pw = log.pw.value;
+
+            if (id.length == 0 || pw.length == 0) {
+                alert("아이디 또는 패스워드를 입력해주세요.");
+                return;
+            }
+            else {
+            log.action = "/LG";
+            log.method ="post";
+            log.submit();
+            }
+        }
+
+    </script>
+</head>
+<body>
+
+    <section id="hi">
+        <form name="log" action="/LG" method="post">
+            아이디: <input type="text" name="id" size="10"><br/>
+            패스워드: <input type="text" name="pw" size="10"><br/>
+
+            <input type="submit" value="s로그인">
+            <input type="reset" value="리셋"><br/>
+            <input type="button" onclick="func_validate()" value="j로그인">
+            <input type="hidden" name="주소" value="광주">
+        </form>
+    </section>
+
+</body>
+</html>
