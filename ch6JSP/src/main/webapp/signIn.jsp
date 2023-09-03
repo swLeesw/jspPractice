@@ -3,10 +3,10 @@
 <head>
     <title>signIn</title>
 </head>
-    <form>
-        name : <input type="text" name="name"><br/>
-        id : <input type="text" name="id"><br/>
-        password : <input type="text" name="pw"><br/>
+    <form enctype="utf-8">
+        name : <input type="text" name="name" required="required"><br/>
+        id : <input type="text" name="id" required="required"><br/>
+        password : <input type="text" name="pw" required="required"><br/>
         hobby :
         <input type="checkbox" name="hobby" value="reading">reading
         <input type="checkbox" name="hobby" value="cycle">cycle
