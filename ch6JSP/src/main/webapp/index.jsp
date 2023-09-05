@@ -22,7 +22,7 @@
                 alert("input id or pw");
                 return;
             }
-            frmLogin.action = "page_01.jsp";
+            frmLogin.action = "cookieEx.jsp";
             frmLogin.method = "post";
             frmLogin.submit();
         }
@@ -31,9 +31,10 @@
 </head>
 <body>
     <div id="login_form">
-        <form action="page_01.jsp" method="post" name="frmLogin">
+        <form action="cookieEx.jsp" method="post" name="frmLogin">
             id: <input type="text" name="id"><br/>
-            pw: <input type="text" name="pw"><br/>
+            pw: <input type="password" name="pw"><br/>
+            <input type="submit" value="sLogin">
             <input type="button" value="login" onclick="check_login()"><br/>
         </form>
     </div>
