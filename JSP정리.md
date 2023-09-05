@@ -83,3 +83,41 @@ JSP 페이지가 요청을 받을 때 실행돼야 할 자바 코드를 작성�
 <%= 자바 Expression %>
 
 ```
+
+## 내장 객체의 영역
+각 객체가 저장되는 메모리의 유효기간
+### 내장 객체의 영역 4가지
+
+- page 영역: 동일한 페이지에서만 공유. 페이지를 벗어나면 소멸(pageContext)
+- request 영역: 하나의 요청에 의해 호출된 페이지와 포워드(요청전달)된 페이지까지 공유.(request)
+- session 영역: 클라이언트가 처음 접속한 후 웹 브라우저를 닫을 때까지 공유
+- application 영역: 한 번 저장되면 웹 애플리케이션이 종료될 때까지 유지
+범위를 나타내면 page < request < session < application으로 나눌 수 있다.
+### 주요 API
+- void setAttribute(String name, Object value): 각 영역의 속성 저장.
+- Object get Attribute(String name): 영역에 저장된 속성값을 얻어옴.
+- void removeAttribute(String name): 영역에 저장된 속성을 삭제.
+
+### page 영역 함수
+```
+pageContext.setAttribute("name", value); //속성 저장
+pageContext.getAttribute("name"); //속성 읽기 (앞에 명시적 형변환 필요)
+
+```
+
+### request 영역 함수
+```
+request.setAttribute("name", value); //속성 저장
+request.getAttribute("name"); //속성 읽기
+//request 내장 객체를 통해 실제 포워드를 수행하는 코드
+request.getRequestDispattcher("포워드할 파일 경로").forward(request, response);
+//포워드시 쿼리스트링으로 매개변수도 전달 가능
+```
+
+### session 영역 함수
+```
+session.setAttribute("name", value);
+session.getAttribute("name");
+//session은 웹브라우저가 종료되기 전까지 모든 영역에서 이용 가능.
+```
+
