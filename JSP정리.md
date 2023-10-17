@@ -38,7 +38,7 @@ JSP페이지를 서블릿 코드로 변환하는 데 필요한 정보를 JSP 엔
 | contentType |                    페이지에서 생성할 MIME 타입을 지정                      |text/htm|
 | **import**  |            **페이지에서 사용할 자바 패키지와 클래스를 지정**             |  없음  |
 | errorPage   | 해당 페이지에서 에러가 발생했을 때 에러 발생 여부를 보여줄 페이지를 설정      |  없음  |
-| isErrorPage |                해당 페이지가 에러를 처리할지 여부를 지정                    | false |
+| isErrorPage |                해당 페이지가 에러를 처리할지 여부를 지정                    | false  
 
 \*contentType="text/html; charset=UTF-8"이게 기본적
 
