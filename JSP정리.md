@@ -124,6 +124,9 @@ session.getAttribute("name");
 ```
 
 ## JSP페이지 액션 태그
+```
+<jsp:include page="이동할페이지">
+```
 | 액션 태그명 |  액션 태그      | 설명 |
 | ----------- | :-------------: | :----: |
 | include    |  \<jsp:include\>  | 다른 페이지의 실행 결과를 현재의 페이지에 포함시킬 때 사용  |
@@ -131,5 +134,5 @@ session.getAttribute("name");
 | useBean    |  \<jsp:useBean\>  | 자바빈을 JSP 페이지에서 사용할 때 사용 |
 | setProperty| \<jsp:setProperty\>| 프로퍼티의 값을 세팅할 때 사용 |
 |getProperty| \<jsp:getProperty\> | 프로퍼티의 값을 얻어낼 때 사용
-🎠
+
 
