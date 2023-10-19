@@ -153,6 +153,10 @@ session.getAttribute("name");
   request.sendRedirection("이동할 페이지");
 %>
 ---------------------------------------------
+<!--만약 parameter의 id가 같으면 태그 안에 새로 정의한 parameter가 덮어 씌워진다.
+    이동할 페이지에 있는 param < 새로 정의한 param-->
 <jsp:forward page="이동할 페이지">
+  <jsp:param name="" value=""\>
+</jsp:forward page="이동할 페이지">
 ```
 브라우저의 주소가 이동할 페이지로 바뀌는 것이 아닌 현재 페이지에서 이동할 페이지의 화면을 보여준다. 이로 인해 현재 페이지에 있는 매개변수를 사용 가능하다.
