@@ -124,15 +124,35 @@ session.getAttribute("name");
 ```
 
 ## JSP페이지 액션 태그
-```
-<jsp:include page="이동할페이지">
-```
+
+### 페이지 액션 태그의 종류
+
 | 액션 태그명 |  액션 태그      | 설명 |
 | ----------- | :-------------: | :----: |
 | include    |  \<jsp:include\>  | 다른 페이지의 실행 결과를 현재의 페이지에 포함시킬 때 사용  |
-| plug-in    |  \<jsp:plug-in\>  | 페이지 사이의 제어를 이동시킬 때 사용  |
+|forward|\<jsp:forward\>|페이지 사이의 제어를 이동할 때 사용
+| plug-in    |  \<jsp:plug-in\>  | 웹 브라우저에서 자바 애플릿을 실행시킬 때 사용  |
 | useBean    |  \<jsp:useBean\>  | 자바빈을 JSP 페이지에서 사용할 때 사용 |
 | setProperty| \<jsp:setProperty\>| 프로퍼티의 값을 세팅할 때 사용 |
 |getProperty| \<jsp:getProperty\> | 프로퍼티의 값을 얻어낼 때 사용
 
+### include 태그
+```
+<%@include file=""%><!--page지시자의 대체-->
+---------------------------------------------
+<jsp:include page="추가시킬 페이지"><!--사이에 파라매터 전달 가능-->
+  <jsp:param name="" value=""\>
+</jsp:include>
+```
+지시자를 통한 include와 다르게 추가시킬 페이지에 매개변수를 전달할 수 있다.
 
+### forward 태그
+```
+<%
+  //redirection의 대체 forward
+  request.sendRedirection("이동할 페이지");
+%>
+---------------------------------------------
+<jsp:forward page="이동할 페이지">
+```
+브라우저의 주소가 이동할 페이지로 바뀌는 것이 아닌 현재 페이지에서 이동할 페이지의 화면을 보여준다. 이로 인해 현재 페이지에 있는 매개변수를 사용 가능하다.
