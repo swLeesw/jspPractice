@@ -130,11 +130,11 @@ session.getAttribute("name");
 | 액션 태그명 |  액션 태그      | 설명 |
 | ----------- | :-------------: | :----: |
 | include    |  \<jsp:include\>  | 다른 페이지의 실행 결과를 현재의 페이지에 포함시킬 때 사용  |
-|forward|\<jsp:forward\>|페이지 사이의 제어를 이동할 때 사용
-| plug-in    |  \<jsp:plug-in\>  | 웹 브라우저에서 자바 애플릿을 실행시킬 때 사용  |
-| useBean    |  \<jsp:useBean\>  | 자바빈을 JSP 페이지에서 사용할 때 사용 |
-| setProperty| \<jsp:setProperty\>| 프로퍼티의 값을 세팅할 때 사용 |
-|getProperty| \<jsp:getProperty\> | 프로퍼티의 값을 얻어낼 때 사용
+|forward     |\<jsp:forward\>    |페이지 사이의 제어를 이동할 때 사용                        |
+| plug-in    |  \<jsp:plug-in\>  | 웹 브라우저에서 자바 애플릿을 실행시킬 때 사용             |
+| useBean    |  \<jsp:useBean\>  | 자바빈을 JSP 페이지에서 사용할 때 사용                    |
+| setProperty| \<jsp:setProperty\>| 프로퍼티의 값을 세팅할 때 사용                           |
+|getProperty| \<jsp:getProperty\> | 프로퍼티의 값을 얻어낼 때 사용                           |
 
 ### include 태그
 ```
@@ -161,3 +161,18 @@ session.getAttribute("name");
 ```
 브라우저의 주소가 이동할 페이지로 바뀌는 것이 아닌 현재 페이지에서 이동할 페이지의 화면을 보여준다. 이로 인해 현재 페이지에 있는 매개변수를 사용 가능하다.
 
+### useBean 태그
+##### Java Bean이란?
+DataBase와 JSP간의 데이터를 쉽게 주고받기위해 사용하는 java클래스
+##### 사용법
+```
+<!-- request로 넘어온 데이터를 자바 빈즈랑 맵핑시켜주는 useBean -->
+        <jsp:useBean id="객체" class="클래스"><!-- 객체생성 클래스 객체 = new 클래스(); -->
+        <!-- Jsp 내용을 자바빈 클래스에 데이터를 맵핑-->
+            <jsp:setProperty name="객체" property="맴버변수"/>
+            <jsp:setProperty name="객체" property="*"/><!--*는 자동으로 모두 맵핑-->
+        </jsp:useBean>
+        <!--출력하는 법-->
+        <jsp:getProperty name="객체" property="맴버변수"/><br>
+        <%=객체.맴버변수반환함수()%>
+```
