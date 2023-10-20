@@ -176,3 +176,4 @@ DataBase와 JSP간의 데이터를 쉽게 주고받기위해 사용하는 java�
         <jsp:getProperty name="객체" property="맴버변수"/><br>
         <%=객체.맴버변수반환함수()%>
 ```
+클래스 파일을 만들고, 클래스의 맴버변수들을 form 내부의 input tage의 id와 1대1 대응시킨다. 그 후 맴버변수에 대한 getter, setter함수를 만들고(선택사항) jsp에 위와 같은 코드를 쓴다. 
