@@ -177,3 +177,42 @@ DataBase와 JSP간의 데이터를 쉽게 주고받기위해 사용하는 java�
         <%=객체.맴버변수반환함수()%>
 ```
 클래스 파일을 만들고, 클래스의 맴버변수들을 form 내부의 input tage의 id와 1대1 대응시킨다. 그 후 맴버변수에 대한 getter, setter함수를 만들고(선택사항) jsp에 위와 같은 코드를 쓴다. 
+
+#### 데이터베이스 연동법 및 사용법
+```
+<%
+    mbean.setHobby(texthobby);//배열 형식은 이렇게 다시 넣어줘야한다.
+
+    //오라클에 접속하는 소스
+    String myid = "system";
+    String mypass = "12345";
+    String myurl = "jdbc:oracle:thin:@localhost:1521:XE";//접속 url
+
+    try{
+        //1.해당 데이터 베이스를 사용 한다고 선언(클래스를 등록 = 오라클을 사용)
+        Class.forName("oracle.jdbc.driver.OracleDriver");//ojdbc안의 패키지(jsp와 dv를연결해준다)
+        //2.해당 데이터 베이스에 접속
+        Connection con = DriverManager.getConnection(myurl, myid, mypass);
+        //3.접속 후 쿼리준비하여 쿼리를 사용하도록 설정
+        String sql="INSERT INTO MEMBER VALUSE (?, ?, ?, ?, ?, ?, ?, ?)";//8개 넣기
+        //3-1.쿼리를 사용하도록 설정
+        PreparedStatement pstmt = con.prepareStatement(sql);//jsp에서 쿼리를 사용하도록 설정
+        //3-2.?에 맞게 데이터를 맵핑
+        pstmt.setString(1, mbean.getId());//idx는 1번부터 시작
+        pstmt.setString(2, mbean.getPw());
+        pstmt.setString(3, mbean.getEmail());
+        pstmt.setString(4, mbean.getTell());
+        pstmt.setString(5, mbean.getHobby());
+        pstmt.setString(6, mbean.getJob());
+        pstmt.setString(7, mbean.getAge());
+        pstmt.setString(8, mbean.getPw());
+        //4.오라클에서 쿼리를 실행하시오
+        pstmt.executeUpdate();//insert, update, delete 시 사용하는 메소드
+        //5.자원 반납
+        con.close();
+    }
+    catch(Exception e){
+
+    }
+%>
+```
